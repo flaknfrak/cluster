@@ -427,6 +427,95 @@
             </div>
         </section>
 
+        <!-- Networking Options -->
+        <section class="market-section">
+            <h2 class="market-title">🌐 Networking for Multi-Node Clusters</h2>
+            
+            <div class="tier-description">
+                For clusters with multiple machines, you'll need networking to connect them. Here are your options from basic to enterprise-grade.
+            </div>
+
+            <div class="build">
+                <h3 class="build-title">Basic Gigabit Ethernet</h3>
+                <div class="build-price" style="color: #22c55e;">$50-200 for 4 nodes</div>
+                <div class="parts-list">
+                    <ul>
+                        <li><span class="part-name">Gigabit Switch (8-port)</span><span class="part-price">$30-80</span></li>
+                        <li><span class="part-name">Ethernet Cables (Cat6)</span><span class="part-price">$20-50</span></li>
+                        <li><span class="part-name">Bandwidth per connection</span><span class="part-price">1 Gbps</span></li>
+                        <li><span class="part-name">Latency</span><span class="part-price">~1ms</span></li>
+                    </ul>
+                </div>
+                <div class="capability">
+                    <strong>Best for:</strong> Entry-level clusters, proof of concept, 2-4 nodes max
+                </div>
+            </div>
+
+            <div class="build">
+                <h3 class="build-title">10 Gigabit Ethernet</h3>
+                <div class="build-price" style="color: #f59e0b;">$800-1,500 for 4 nodes</div>
+                <div class="parts-list">
+                    <ul>
+                        <li><span class="part-name">10GbE Switch (8-port)</span><span class="part-price">$300-600</span></li>
+                        <li><span class="part-name">10GbE Network Cards (per node)</span><span class="part-price">$50-100 each</span></li>
+                        <li><span class="part-name">SFP+ DAC Cables</span><span class="part-price">$100-200</span></li>
+                        <li><span class="part-name">Bandwidth per connection</span><span class="part-price">10 Gbps</span></li>
+                        <li><span class="part-name">Latency</span><span class="part-price">~50μs</span></li>
+                    </ul>
+                </div>
+                <div class="capability">
+                    <strong>Best for:</strong> Serious home clusters, 4-8 nodes, good price/performance balance
+                </div>
+            </div>
+
+            <div class="build">
+                <h3 class="build-title">25GbE RoCE (RDMA)</h3>
+                <div class="build-price" style="color: #8b5cf6;">$3,000-5,000 for 4 nodes</div>
+                <div class="parts-list">
+                    <ul>
+                        <li><span class="part-name">25GbE RoCE Switch</span><span class="part-price">$2,000-3,000</span></li>
+                        <li><span class="part-name">ConnectX-5 NICs (per node)</span><span class="part-price">$300-400 each</span></li>
+                        <li><span class="part-name">SFP28 DAC Cables</span><span class="part-price">$200-400</span></li>
+                        <li><span class="part-name">Bandwidth per connection</span><span class="part-price">25 Gbps</span></li>
+                        <li><span class="part-name">Latency</span><span class="part-price">~5μs</span></li>
+                    </ul>
+                </div>
+                <div class="capability">
+                    <strong>Best for:</strong> Professional setups, low-latency distributed training, 6+ nodes
+                </div>
+            </div>
+
+            <div class="build">
+                <h3 class="build-title">InfiniBand HDR</h3>
+                <div class="build-price" style="color: #8b5cf6;">$10,000-15,000 for 4 nodes</div>
+                <div class="parts-list">
+                    <ul>
+                        <li><span class="part-name">HDR InfiniBand Switch (36-port)</span><span class="part-price">$8,000-12,000</span></li>
+                        <li><span class="part-name">ConnectX-6 HDR Cards (per node)</span><span class="part-price">$800-1,200 each</span></li>
+                        <li><span class="part-name">HDR Cables</span><span class="part-price">$500-1,000</span></li>
+                        <li><span class="part-name">Bandwidth per connection</span><span class="part-price">200 Gbps</span></li>
+                        <li><span class="part-name">Latency</span><span class="part-price">~100ns</span></li>
+                    </ul>
+                </div>
+                <div class="capability">
+                    <strong>Best for:</strong> Enterprise clusters, data center performance, maximum throughput
+                </div>
+                <div class="note">
+                    <strong>Note:</strong> Used InfiniBand equipment can reduce costs by 60-80%
+                </div>
+            </div>
+
+            <div style="background: #f1f5f9; padding: 1.5rem; border-radius: 6px; margin-top: 2rem;">
+                <h3 style="color: #0c7b93; margin-bottom: 1rem;">🔧 Networking Recommendations</h3>
+                <ul style="margin-left: 1.5rem;">
+                    <li><strong>2-4 node clusters:</strong> Start with Gigabit Ethernet, upgrade to 10GbE if needed</li>
+                    <li><strong>4-8 node clusters:</strong> 10 Gigabit Ethernet provides good price/performance</li>
+                    <li><strong>8+ node clusters:</strong> Consider 25GbE RoCE or used InfiniBand equipment</li>
+                    <li><strong>Budget tip:</strong> Used ConnectX-3/4 InfiniBand cards cost $50-200 and provide huge improvements</li>
+                </ul>
+            </div>
+        </section>
+
         <!-- Current Market Pricing -->
         <section class="market-section">
             <h2 class="market-title">📊 Current GPU Market Pricing</h2>

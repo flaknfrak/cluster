@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Home GPU Clusters - Complete Guide 2025</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f8fafc;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffc947;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            color: #0c7b93;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #ffc947;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #6c7b7f;
+            margin-bottom: 3rem;
+        }
+
+        /* Navigation Cards */
+        .nav-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .nav-card {
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .nav-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+        }
+
+        .lesson-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .parts-card {
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: white;
+        }
+
+        .nav-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .nav-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .nav-description {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-time {
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* Features */
+        .features {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .features h3 {
+            font-size: 1.5rem;
+            color: #0c7b93;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .feature-text h4 {
+            font-weight: 600;
+            color: #0c7b93;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-text p {
+            font-size: 0.9rem;
+            color: #6c7b7f;
+        }
+
+        /* Guide Parts */
+        .guide-parts {
+            margin: 4rem 0;
+        }
+
+        .parts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .part-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .part-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .part-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+        }
+
+        .part-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .part-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .part-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #0c7b93;
+            margin-bottom: 1rem;
+        }
+
+        .part-description {
+            color: #6c7b7f;
+            margin-bottom: 1.5rem;
+        }
+
+        .part-highlights {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .part-highlights li {
+            padding: 0.5rem 0;
+            color: #2c3e50;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .part-highlights li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+            font-weight: 700;
+        }
+
+        .part-time {
+            background: #ffc947;
+            color: #2c3e50;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* Call to Action */
+        .cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .nav-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Building Home GPU Clusters</h1>
+            <p class="hero-subtitle">The Complete 2025 Guide to AI Computing Infrastructure</p>
+            <p class="hero-description">
+                Transform your AI capabilities with enterprise-grade GPU clusters built from consumer hardware. 
+                This comprehensive guide takes you from theory to production deployment, enabling you to run 
+                massive language models like Llama 405B at home for a fraction of cloud costs.
+            </p>
+            
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-value">70%+</div>
+                    <div class="stat-label">Cost Savings vs Cloud</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">405B</div>
+                    <div class="stat-label">Parameters Deployable</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">30x</div>
+                    <div class="stat-label">Performance Improvements</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">24/7</div>
+                    <div class="stat-label">Always Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2 class="section-title">Complete Learning Path</h2>
+        <p class="section-subtitle">
+            Master every aspect of GPU cluster design, from fundamental concepts to advanced optimization techniques
+        </p>
+
+        <!-- Navigation Cards -->
+        <div class="nav-cards">
+            <div class="nav-card lesson-card" onclick="window.open('part1.html', '_blank')">
+                <div class="nav-icon">🎓</div>
+                <h3 class="nav-title">Interactive Cluster Lesson</h3>
+                <p class="nav-description">
+                    Comprehensive interactive tutorial covering GPU architecture, memory systems, networking, 
+                    and real-world deployment scenarios with hands-on examples
+                </p>
+                <div class="read-time">45-60 minutes</div>
+            </div>
+
+            <div class="nav-card parts-card" onclick="window.open('parts-list.html', '_blank')">
+                <div class="nav-icon">🛒</div>
+                <h3 class="nav-title">Complete Parts List Guide</h3>
+                <p class="nav-description">
+                    Detailed pricing and configuration guide with current market prices, 
+                    from $1,425 budget builds to $250K enterprise clusters
+                </p>
+                <div class="read-time">Pricing guide</div>
+            </div>
+        </div>
+
+        <!-- What You'll Master -->
+        <!--
+        <div class="features">
+            <h3>What You'll Master</h3>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🏗️</div>
+                    <div class="feature-text">
+                        <h4>GPU Architecture</h4>
+                        <p>Memory hierarchies, tensor cores, NVLink interconnects</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-text">
+                        <h4>Hardware Planning</h4>
+                        <p>Power, cooling, networking infrastructure design</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">☸️</div>
+                    <div class="feature-text">
+                        <h4>Software Stack</h4>
+                        <p>Kubernetes, AI frameworks, monitoring systems</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🧠</div>
+                    <div class="feature-text">
+                        <h4>AI Applications</h4>
+                        <p>Large language models, creative AI, production deployment</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💰</div>
+                    <div class="feature-text">
+                        <h4>Cost Optimization</h4>
+                        <p>ROI analysis, break-even calculations, efficiency maximization</p>
+                    </div>
+                </div>
+                <div class="feature" onclick="window.open('parts-list.html', '_blank')" style="cursor: pointer;">
+                    <div class="feature-icon">🛒</div>
+                    <div class="feature-text">
+                        <h4>Parts Selection</h4>
+                        <p>Current pricing, configurations, procurement strategies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+
+        <!-- Detailed Guide Parts -->
+        <!--
+        <div class="guide-parts">
+            <h3 style="font-size: 2rem; color: #0c7b93; margin-bottom: 2rem; text-align: center;">
+                Detailed Guide Parts
+            </h3>
+
+            <div class="parts-grid">
+                <div class="part-card" onclick="window.open('part1.html', '_blank')">
+                    <div class="part-number">1</div>
+                    <h3 class="part-title">Fundamentals & Theory</h3>
+                    <p class="part-description">
+                        Deep dive into GPU architecture, memory systems, and interconnect technologies that make distributed AI possible.
+                    </p>
+                    <ul class="part-highlights">
+                        <li>GPU architecture and memory hierarchy</li>
+                        <li>NVLink and RDMA networking fundamentals</li>
+                        <li>Communication protocols (NCCL, UCX)</li>
+                        <li>Performance calculations and bottleneck analysis</li>
+                    </ul>
+                    <div class="part-time">25-30 minutes</div>
+                </div>
+
+                <div class="part-card" onclick="window.open('part2.html', '_blank')">
+                    <div class="part-number">2</div>
+                    <h3 class="part-title">Hardware Planning & Infrastructure</h3>
+                    <p class="part-description">
+                        Practical guidance for GPU selection, power planning, cooling solutions, and network design for optimal performance.
+                    </p>
+                    <ul class="part-highlights">
+                        <li>GPU selection matrix (RTX 4090 vs RTX 6000 Ada)</li>
+                        <li>Power and electrical infrastructure planning</li>
+                        <li>Thermal management and cooling strategies</li>
+                        <li>Network architecture and component selection</li>
+                    </ul>
+                    <div class="part-time">20-25 minutes</div>
+                </div>
+
+                <div class="part-card" onclick="window.open('part3.html', '_blank')">
+                    <div class="part-number">3</div>
+                    <h3 class="part-title">Software Stack & Orchestration</h3>
+                    <p class="part-description">
+                        Container orchestration, AI framework deployment, monitoring systems, and automation for production-grade clusters.
+                    </p>
+                    <ul class="part-highlights">
+                        <li>Kubernetes vs Docker Swarm for AI workloads</li>
+                        <li>vLLM, TensorRT-LLM framework deployment</li>
+                        <li>Monitoring with DCGM and Grafana</li>
+                        <li>Performance optimization and GitOps automation</li>
+                    </ul>
+                    <div class="part-time">30-35 minutes</div>
+                </div>
+
+                <div class="part-card" onclick="window.open('part4.html', '_blank')">
+                    <div class="part-number">4</div>
+                    <h3 class="part-title">Advanced Applications & Use Cases</h3>
+                    <p class="part-description">
+                        Deploy massive language models, creative AI workflows, and production systems with enterprise-grade capabilities.
+                    </p>
+                    <ul class="part-highlights">
+                        <li>Running Llama 405B and GPT-4 scale models</li>
+                        <li>Creative AI: Stable Diffusion, video generation</li>
+                        <li>Research capabilities and distributed training</li>
+                        <li>Production deployment and cost analysis</li>
+                    </ul>
+                    <div class="part-time">25-30 minutes</div>
+                </div>
+            </div>
+        </div>
+        -->
+        <!-- Call to Action -->
+        <div class="cta">
+            <h3>🚀 Start Your GPU Cluster Journey</h3>
+            <p>
+                From zero to enterprise-grade AI infrastructure in one comprehensive guide. 
+                Begin with the fundamentals or jump to specific topics based on your experience level.
+            </p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">
+                Total estimated reading time: 2-2.5 hours | Implementation time: 2-8 weeks depending on complexity
+            </p>
+        </div>
+    </div>
+</body>
+</html>
